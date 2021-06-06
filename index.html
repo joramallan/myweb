@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.min.js"></script>
+    <title>Document</title>
+
+    <script>
+        $(document).ready(function(){
+            $("#loader").hide();
+        });
+    </script>
+</head>
+<body>
+    <p id="about"></p>
+    <div class="container">
+
+        <!-- HEADER SECTION -->
+        <div class="head"></div>
+
+        <!-- MENU SECTION -->
+        <div class="menu" id="menu">
+            <span><a href="javascript:menuIcon()" class="menu-icon"><img src="icon/menu.png" alt="Icon Image"></a></span>
+            <span style="position: absolute;right: 10px;"><a href="javascript:menuIconQuick()" class="menu-icon"><img src="icon/menu.png" alt="Icon Image"></a></span>
+            <ul><span class="menu-title">MENU</span> <br>
+                <li><a href="#">English</a></li>
+                <li><a href="kiswahili/index.html">Kiswahili</a></li>
+                <li><a href="">Blog</a></li>
+            </ul>
+        </div>
+
+        <!-- CONTENT SECTION -->
+        <div class="content">
+            <h4 class="section-title">About Joram</h4>
+            <img src="image/joram.jpg" alt="Image" width="50%" id="myimage">
+            
+            <p>
+                My name is <b>Joram A. Kingu</b> from Singida, Tanzania. I am a computer scientist. 
+                I am currently at the University of Dar es Salaam. I have been developing 
+                websites for some years. I have got enough experience in designing and developing 
+                different kinds of websites. I have developed web systems like <b>Online Testing System</b> 
+                which helps students perform simple tests by using computers and the computer 
+                give the results, <b>Online Voting System</b> which enable college students to perform election 
+                by using computers and <b>Budget Management System</b> which enable people to manage and control 
+                their budget within a specific period of time.
+            </p>
+
+            <p>
+                I would like to welcome you all who own businesses, personal service or organization but 
+                you don’t have a website to brand your service to use me design and develop a cool website 
+                for your business or service for an affordable price.
+            </p> <br><br>
+
+
+            <h4 class="section-title" id="website-meaning">Website Meaning</h4>
+            <p>
+                A website is a collection of related pages written in computer languages such as HTML, PHP,
+                XHTML, Javascript etc which are identified by a common domain and published on at least one server. 
+                Examples of websites are Facebook which is identified by a domain name 
+                'facebook.com' and Necta which is identified by a domain name 'necta.go.tz'.
+            </p> <br><br>
+
+
+            <h4 class="section-title" id="website-significance">Website Significance</h4>
+            <p>
+                <ol>
+                    <li class="para-title-content">Branding your business</li>
+                    <p>Having a website makes it very easy for people to find you, read up about your company, discover what you do, and answer a bunch of questions they have on your business. By having a website people will be able 
+                      to find your company when they search for your company on a search engine like Google, Yahoo or Bing.</p>
+                    <p>Showcasing your brand to your prospective customers is one of the most important things that you can do. By clearly establishing who you are, what you 
+                      represent and what you stand for, you increase the chances of your customers buying from you.
+                      <p>This is also something that can set you apart from your competitors. Without a website, it can be incredibly challenging to do this because people can't easily find quality and reliable information on your business.</p>
+                      <div><img src="image/business1.jpeg" alt="Business Picture" width="300px" height="200px"></div>
+                    </p>
+            
+                    <li class="para-title-content">Establish credibility and build trust</li>
+                    <p>One of the main reasons you should have a website for your business is to increase your organization's credibility. Chances are there are several providers offering a similar service to yours. One way you can 
+                      stand out is by having a website that looks good and clearly communicates quality information to your consumers
+                    </p>
+            
+                    <li class="para-title-content">Saving You Time + Customer Service</li>
+                    <p>Many businesses get calls from prospects or existing customers asking simple questions about location and hours of operation. If you miss a call, the customer is left unhappy. Calls can also distract 
+                      your staff from focusing on the most important parts of your business. A website can reduce these calls and increase internal productivity. At the same time, it helps customers find useful information without needing to 
+                      call, which ultimately provides an all-around better user experience.
+                    </p>
+            
+                    <li class="para-title-content">24/7 Online Presence</li>
+                    <p>One of the major advantages of having a website is that it is accessible to anyone, anywhere, anytime. Even during non-business hours, customers can access your website and avail your services or get the 
+                      information they need, which is one of the key elements in the importance of a website in business. The website is always at work to ensure that customers who come in are always served in the comfort of their homes.
+                    </p>
+                </ol>
+            </p>
+        </div>
+
+        <!-- QUICK SECTION -->
+        <div class="quick">
+            <ul><span class="menu-title">QUICK NAVIGATION</span> <br>
+                <li><a href="#about" onclick="hideElem()">About Joram</a></li>
+                <li><a href="#website-meaning" onclick="hideElem()">Meaning of Website</a></li>
+                <li><a href="#website-significance" onclick="hideElem()">Website Significance</a></li>
+            </ul>
+        </div>
+
+        <!-- FOOTER SECTION -->
+        <div class="footer">
+            <p>Copyright &copy; Joram Kingu 2021</p>
+        </div>
+
+    </div>
+
+    <div id="loader"></div>
+
+    <a href="#about" class="up"><img src="icon/up.png" alt="Up"></a>
+
+    <script>
+        function menuIcon(){
+            $(".menu ul").toggle(100);
+        }
+
+        function menuIconQuick(){
+            $(".quick").toggle(100, "swing");
+        }
+
+        function hideElem(){
+            if (window.innerWidth <= 600) {
+                $(".quick").hide();
+            }
+        }
+        
+    </script>
+
+    <script>
+        $(document).scroll(function(){
+            var position = $(document).scrollTop();
+            if (position > 282) {
+                $(".up").show(300);
+            }else{
+                $(".up").hide();
+            }
+        });
+    </script>
+
+    <script>
+        $('#loader').ajaxStart(function() {
+            $(this).show();
+        }).ajaxComplete(function() {
+            $(this).hide();
+        });
+    </script>
+</body>
+</html>
